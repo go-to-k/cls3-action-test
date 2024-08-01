@@ -17,9 +17,9 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
-      # - uses: go-to-k/cls3@main
-      # - name: Run cls3
-      #   run: cls3 -v
+      - uses: go-to-k/cls3@main
+      - name: Run cls3
+        run: cls3 -v
       # - uses: go-to-k/cls3@main
       #   with:
       #     bucket-name: cls3test1, cls3test2

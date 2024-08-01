@@ -25,17 +25,18 @@ jobs:
       #     bucket-name: cls3test1, cls3test2
       #     force: true
       #     # region: ap-northeast-1
-      - uses: go-to-k/cls3@main
+      - name: Delete bucket
+        uses: go-to-k/cls3@main
         with:
-          bucket-name: cls3test3, cls3test4
+          bucket-name: test-goto-001, test-goto-002
           force: true
-          region: us-east-1
-      - uses: go-to-k/cls3@main
-        with:
-          bucket-name: cls3test5
-          force: true
-          # region: ap-northeast-1
-      - name: Run cls3
-        run: |
-          echo "cls3"
-          cls3 -v
+          # region: us-east-1
+      # - uses: go-to-k/cls3@main
+      #   with:
+      #     bucket-name: cls3test5
+      #     force: true
+      #     # region: ap-northeast-1
+      # - name: Run cls3
+      #   run: |
+      #     echo "cls3"
+      #     cls3 -v

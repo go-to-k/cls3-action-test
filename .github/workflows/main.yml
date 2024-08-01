@@ -1,0 +1,41 @@
+name: Run cls3
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  run-cls3:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v3
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+      - uses: go-to-k/cls3@main
+      - name: Run cls3
+        run: cls3 -v
+      - uses: go-to-k/cls3@main
+        with:
+          bucket-name: cls3test1, cls3test2
+          force: true
+          # region: ap-northeast
+      - uses: go-to-k/cls3@main
+        with:
+          bucket-name: cls3test3, cls3test4
+          # force: true
+          region: ap-northeast
+      - uses: go-to-k/cls3@main
+        with:
+          bucket-name: cls3test5
+          force: false
+          # region: ap-northeast
+      - name: Run cls3
+        run: |
+          echo "cls3"
+          cls3 -v

@@ -23,7 +23,7 @@ jobs:
       - uses: go-to-k/cls3@main
         with:
           bucket-name: goto-0001--use1-az4--x-s3, goto-0002--use1-az4--x-s3
-          force: true
+          # force: true
           directory-buckets-mode: true
           # quiet: true
           region: us-east-1

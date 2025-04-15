@@ -22,18 +22,15 @@ jobs:
         run: cls3 -v
       - uses: go-to-k/cls3@main
         with:
-          bucket-name: goto-0001--use1-az4--x-s3, goto-0002--use1-az4--x-s3
-          force: true
-          directory-buckets-mode: true
-          # quiet: true
-          region: us-east-1
-      - uses: go-to-k/cls3@main
-        with:
-          bucket-name: test-goto-oldversion-01
-          # force: true
-          old-versions-only: true
-          # quiet: true
-          # region: us-east-1
+          bucket-name: cls3-test-39992-0001
+          key-prefix: 1/
+      # - uses: go-to-k/cls3@main
+      #   with:
+      #     bucket-name: test-goto-oldversion-01
+      #     # force: true
+      #     old-versions-only: true
+      #     # quiet: true
+      #     # region: us-east-1
       # - name: Delete bucket Quiet true (default)
       #   uses: go-to-k/cls3@main
       #   with:
